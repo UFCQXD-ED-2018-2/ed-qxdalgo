@@ -9,4 +9,5 @@ HEADERS += \
     qxdsorting.h \
     qxddefs.h \
     qxdsearching.h \
-    qxdalgorithms.h
+    qxdalgorithms.h \
+    qxdvector.h

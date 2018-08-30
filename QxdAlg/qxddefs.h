@@ -35,14 +35,20 @@
 #include <stddef.h>
 #include <stdint.h>
 
+//******* TIPOS DE REFERÊNCIAS
+
 #define QX_LAMBDA_INDEX SIZE_MAX
+#define QX_LAMBDA_REF NULL
 typedef size_t qxIndex;
+
+//******* TIPOS DE DADOS
 
 typedef void * qxUserData;
 
-#define QX_LAMBDA_REF NULL
-typedef void * const qxGenericElement;
-typedef void * const qxGenericArray;
+typedef void * qxGenericElement;
+typedef void * qxGenericArray;
+
+//******* TIPOS DE FUNÇÕES
 
 typedef int  (*qxCompareFunc)(void*,void*);
 typedef void (*qxHandleElementFunc)(void*,void*);
