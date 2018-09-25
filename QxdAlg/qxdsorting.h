@@ -91,20 +91,20 @@ void qx_quick_sort(int array[], size_t num_elems);
  *
  * @param[in,out] array     Vetor a ser ordenado.
  * @param[in]     num_elems Quantidade de elementos no vetor a ser ordenado.
- * @param[in]     min_val   Valor do \em menor elemento presente em \a array.
- * @param[in]     max_val   Valor do \em maior elemento presente em \a array.
+ * @param[in]     min_val   Valor do \em menor elemento presente em \p array.
+ * @param[in]     max_val   Valor do \em maior elemento presente em \p array.
  */
 void qx_counting_sort(int array[], size_t num_elems, int min_val, int max_val);
 
 /**
- * @brief Ordena o vetor informado usando <em>ordenação por dígitos</em>.
+ * @brief Ordena o vetor informado usando <em>ordenação pelos dígitos</em>.
  *
  * @param[in,out] array     Vetor a ser ordenado.
  * @param[in]     num_elems Quantidade de elementos no vetor a ser ordenado.
  */
 void qx_radix_sort_i(int   array[], size_t num_elems);
 /**
- * @brief Ordena o vetor informado usando <em>ordenação por particionamento</em>.
+ * @brief Ordena o vetor informado usando <em>ordenação pelos dígitos</em>.
  *
  * @param[in,out] array     Vetor a ser ordenado.
  * @param[in]     num_elems Quantidade de elementos no vetor a ser ordenado.
