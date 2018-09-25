@@ -35,16 +35,15 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define QX_LAMBDA_INDEX SIZE_MAX
-typedef size_t qxIndex;
-
-typedef void * qxUserData;
+//.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+//. OBSERVAÇÕES
+//.
+//. - Não altere este arquivo.
+//.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
 
 #define QX_LAMBDA_REF NULL
-typedef void * const qxGenericElement;
-typedef void * const qxGenericArray;
+#define QX_LAMBDA_INDEX SIZE_MAX
 
-typedef int  (*qxCompareFunc)(void*,void*);
-typedef void (*qxHandleElementFunc)(void*,void*);
+typedef size_t qxIndex;
 
 #endif // QXDDEFS_H

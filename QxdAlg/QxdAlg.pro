@@ -8,5 +8,4 @@ SOURCES += main.c
 HEADERS += \
     qxdsorting.h \
     qxddefs.h \
-    qxdsearching.h \
-    qxdalgorithms.h
+    qxdsearching.h

@@ -5,6 +5,7 @@
  **  @author Arthur Rodrigues Araruna <ararunaufc(at)gmail.com>
  **
  **  @brief
+ **  Definition of all functions related to searching in the library.
  **
  **  @copyright
  **  This source code is part of an educational project, associated with
@@ -33,19 +34,85 @@
 #define QXDSEARCHING_H
 
 #include "qxddefs.h"
-
 #include <stdbool.h>
 
+//.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+//. OBSERVAÇÕES
+//.
+//. - Não altere este arquivo.
+//. - Nos arquivos de implementação você pode definir outras funções para que
+//.   sejam usadas como auxiliares das neste arquivo.
+//.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
 
-bool qx_contains(qxGenericArray array, qxCompareFunc compare, size_t elem_size, size_t num_elems, bool is_sorted);
+/**
+ * @enum  qxSortType
+ * @brief Descreve o tipo de ordenação de um vetor.
+ */
+typedef enum {
+    ARRAY_NOT_SORTED, /*!< Sem ordenação. */
+    ARRAY_ASC,        /*!< Ordenado não-decrescente. */
+    ARRAY_DESC        /*!< Ordenado não-crescente. */
+} qxSortType;
 
-qxIndex qx_find_index(qxGenericArray array, qxGenericElement element, qxCompareFunc compare, size_t elem_size, size_t num_elems, bool is_sorted);
+/**
+ * @brief Determina se o vetor informado contém o elemento informado em uma de
+ *        suas posições.
+ *
+ * @param array     Vetor onde buscar o elemento \a element.
+ * @param num_elems Quantidade de elementos no vetor.
+ * @param element   Elemento a ser buscado em \a array.
+ * @param sorting   Tipo de ordenação do vetor \a array.
+ * @return          Se o elemento foi encontrado ou não.
+ */
+bool qx_contains(int array[], size_t num_elems, int element, qxSortType sorting);
 
-qxIndex qx_lower_bound(qxGenericArray array, qxGenericElement element, qxCompareFunc compare, size_t elem_size, size_t num_elems, bool is_sorted);
-qxIndex qx_upper_bound(qxGenericArray array, qxGenericElement element, qxCompareFunc compare, size_t elem_size, size_t num_elems, bool is_sorted);
+/**
+ * @brief Determina o vetor informado contém o elemento informado em uma de
+ *        suas posições.
+ *
+ * @param array     Vetor onde buscar o elemento \a element.
+ * @param num_elems Quantidade de elementos no vetor.
+ * @param element   Elemento a ser buscado em \a array.
+ * @param sorting   Tipo de ordenação do vetor \a array.
+ * @return          Índice onde encontramos o elemento, ou \c QX_LAMBDA_INDEX
+ *                  caso o elemento não esteja no vetor.
+ *
+ * @see             ::qxIndex
+ * @see             #QX_LAMBDA_INDEX
+ */
+qxIndex qx_find_index(int array[], size_t num_elems, int element, qxSortType sorting);
 
+/**
+ * @brief Determina o índice no vetor informado onde encontramos o elemento
+ *        \em ínfimo do elemento informado.
+ *
+ * @param array     Vetor onde buscar o ínfimo.
+ * @param num_elems Quantidade de elementos no vetor.
+ * @param element   Elemento de referência ao ínfimo.
+ * @param sorting   Tipo de ordenação do vetor \a array.
+ * @return          Índice onde encontramos o ínfimo, ou \c QX_LAMBDA_INDEX caso
+ *                  não exista ínfimo.
+ *
+ * @see             ::qxIndex
+ * @see             #QX_LAMBDA_INDEX
+ */
+qxIndex qx_lower_bound(int array[], size_t num_elems, int element, qxSortType sorting);
 
-qxIndex qx_binary_search(qxGenericArray array, qxCompareFunc compare, size_t elem_size, size_t num_elems);
-qxIndex qx_exponential_search(qxGenericArray array, qxCompareFunc compare, size_t elem_size, size_t num_elems);
+/**
+ * @brief Determina o índice no vetor informado onde encontramos o elemento
+ *        \em supremo do elemento informado.
+ *
+ * @param array     Vetor onde buscar o supremo.
+ * @param num_elems Quantidade de elementos no vetor.
+ * @param element   Elemento de referência ao supremo.
+ * @param sorting   Tipo de ordenação do vetor \a array.
+ * @return          Índice onde encontramos o supremo, ou \c QX_LAMBDA_INDEX caso
+ *                  não exista supremo.
+ *
+ * @see             ::qxIndex
+ * @see             #QX_LAMBDA_INDEX
+ */
+qxIndex qx_upper_bound(int array[], size_t num_elems, int element, qxSortType sorting);
+
 
 #endif // QXDSEARCHING_H

@@ -34,24 +34,82 @@
 
 #include "qxddefs.h"
 
+//.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+//. OBSERVAÇÕES
+//.
+//. - Não altere este arquivo.
+//. - Nos arquivos de implementação você pode definir outras funções para que
+//.   sejam usadas como auxiliares das neste arquivo.
+//. - Todos os algoritmos de ordenação devem ordenar de forma não-decrescente.
+//.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+
 //******* BÁSICOS
-void qx_insertion_sort(qxGenericArray array, qxCompareFunc compare, size_t elem_size, size_t num_elems);
+/**
+ * @brief Ordena o vetor informado usando <em>ordenação por inserção</em>.
+ *
+ * @param[in,out] array     Vetor a ser ordenado.
+ * @param[in]     num_elems Quantidade de elementos no vetor a ser ordenado.
+ */
+void qx_insertion_sort(int array[], size_t num_elems);
 
-void qx_selection_sort(qxGenericArray array, qxCompareFunc compare, size_t elem_size, size_t num_elems);
+/**
+ * @brief Ordena o vetor informado usando <em>ordenação por seleção</em>.
+ *
+ * @param[in,out] array     Vetor a ser ordenado.
+ * @param[in]     num_elems Quantidade de elementos no vetor a ser ordenado.
+ */
+void qx_selection_sort(int array[], size_t num_elems);
 
-void qx_bubble_sort(qxGenericArray array, qxCompareFunc compare, size_t elem_size, size_t num_elems);
+/**
+ * @brief Ordena o vetor informado usando <em>ordenação por borbulhamento</em>.
+ *
+ * @param[in,out] array     Vetor a ser ordenado.
+ * @param[in]     num_elems Quantidade de elementos no vetor a ser ordenado.
+ */
+void qx_bubble_sort(int array[], size_t num_elems);
 
 //******* EFICIENTES
-void qx_merge_sort(qxGenericArray array, qxCompareFunc compare, size_t elem_size, size_t num_elems);
+/**
+ * @brief Ordena o vetor informado usando <em>ordenação por entrelaçamento</em>.
+ *
+ * @param[in,out] array     Vetor a ser ordenado.
+ * @param[in]     num_elems Quantidade de elementos no vetor a ser ordenado.
+ */
+void qx_merge_sort(int array[], size_t num_elems);
 
-void qx_quick_sort(qxGenericArray array, qxCompareFunc compare, size_t elem_size, size_t num_elems);
+/**
+ * @brief Ordena o vetor informado usando <em>ordenação por particionamento</em>.
+ *
+ * @param[in,out] array     Vetor a ser ordenado.
+ * @param[in]     num_elems Quantidade de elementos no vetor a ser ordenado.
+ */
+void qx_quick_sort(int array[], size_t num_elems);
 
 //******* ESPECÍFICOS
-void qx_counting_sort_i(int      array[], size_t num_elems, int      min_val, int      max_val);
-void qx_counting_sort_l(long     array[], size_t num_elems, long     min_val, long     max_val);
-void qx_counting_sort_u(unsigned array[], size_t num_elems, unsigned min_val, unsigned max_val);
+/**
+ * @brief Ordena o vetor informado usando <em>ordenação por contagem</em>.
+ *
+ * @param[in,out] array     Vetor a ser ordenado.
+ * @param[in]     num_elems Quantidade de elementos no vetor a ser ordenado.
+ * @param[in]     min_val   Valor do \em menor elemento presente em \a array.
+ * @param[in]     max_val   Valor do \em maior elemento presente em \a array.
+ */
+void qx_counting_sort(int array[], size_t num_elems, int min_val, int max_val);
 
+/**
+ * @brief Ordena o vetor informado usando <em>ordenação por dígitos</em>.
+ *
+ * @param[in,out] array     Vetor a ser ordenado.
+ * @param[in]     num_elems Quantidade de elementos no vetor a ser ordenado.
+ */
 void qx_radix_sort_i(int   array[], size_t num_elems);
+/**
+ * @brief Ordena o vetor informado usando <em>ordenação por particionamento</em>.
+ *
+ * @param[in,out] array     Vetor a ser ordenado.
+ * @param[in]     num_elems Quantidade de elementos no vetor a ser ordenado.
+ * @param[in]     precision Número de casas decimais a considerar na ordenação.
+ */
 void qx_radix_sort_f(float array[], size_t num_elems, short precision);
 
 #endif // QXDSORTING_H
