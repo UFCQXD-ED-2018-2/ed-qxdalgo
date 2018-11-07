@@ -1,7 +1,7 @@
 /************************************************************************
  **
- **  @file   qxddefs.h
- **  @date   2018-8-13
+ **  @file   qxdvector.h
+ **  @date   2018-11-7
  **  @author Arthur Rodrigues Araruna <ararunaufc(at)gmail.com>
  **
  **  @brief
@@ -28,35 +28,48 @@
  **
  *************************************************************************/
 
+#ifndef ED_QXALG_QXDVECTOR_H
+#define ED_QXALG_QXDVECTOR_H
 
-#ifndef QXDDEFS_H
-#define QXDDEFS_H
-
-#include <stdbool.h>
-#include <stddef.h>
-#include <stdint.h>
+#include "qxddefs.h"
 
 //.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
 //. OBSERVAÇÕES
 //.
 //. - Não altere este arquivo.
+//. - Nos arquivos de implementação você pode definir outras funções para que
+//.   sejam usadas como auxiliares das neste arquivo.
 //.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
 
-/**
-  Diz respeito a referências inválidas ou inexistentes. Pode ser usado para
-  representar erro ou falha quando esperamos uma referência.
-  */
-#define QX_LAMBDA_REF NULL
-/**
-  Diz respeito a um índice inválido ou inexistente. Pode ser usado para
-  representar erro ou falha quando esperamos um índice.
-  */
-#define QX_LAMBDA_INDEX SIZE_MAX
+struct __qxd_vector;
 
-/**
- * @brief Usado sempre que o parâmetro ou retorno disser respeito a um índice
- *        de um vetor ou lista.
- */
-typedef size_t qxIndex;
+typedef struct __qxd_vector * QxVector;
 
-#endif // QXDDEFS_H
+
+QxVector qx_vector_new   (size_t capacity);
+void     qx_vector_delete(QxVector vector);
+
+size_t qx_vector_size    (QxVector vector);
+size_t qx_vector_capacity(QxVector vector);
+
+bool qx_vector_empty(QxVector vector);
+bool qx_vector_full (QxVector vector);
+
+bool    qx_vector_contains (QxVector vector, int element);
+qxIndex qx_vector_find     (QxVector vector, int element, qxIndex fromIndex);
+qxIndex qx_vector_find_last(QxVector vector, int element, qxIndex upToIndex);
+
+int qx_vector_at  (QxVector vector, qxIndex index);
+int qx_vector_font(QxVector vector);
+int qx_vector_back(QxVector vector);
+
+void qx_vector_insert    (QxVector vector, int element, qxIndex index);
+void qx_vector_push_back (QxVector vector, int element);
+void qx_vector_push_front(QxVector vector, int element);
+
+void qx_vector_remove_element(QxVector vector, int element);
+void qx_vector_remove_at     (QxVector vector, qxIndex index);
+void qx_vector_pop_back      (QxVector vector);
+void qx_vector_pop_front     (QxVector vector);
+
+#endif //ED_QXALG_QXDVECTOR_H

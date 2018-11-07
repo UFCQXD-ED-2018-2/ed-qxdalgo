@@ -1,7 +1,7 @@
 /************************************************************************
  **
- **  @file   qxddefs.h
- **  @date   2018-8-13
+ **  @file   qxdlist.h
+ **  @date   2018-11-7
  **  @author Arthur Rodrigues Araruna <ararunaufc(at)gmail.com>
  **
  **  @brief
@@ -28,35 +28,46 @@
  **
  *************************************************************************/
 
+#ifndef ED_QXALG_QXDLIST_H
+#define ED_QXALG_QXDLIST_H
 
-#ifndef QXDDEFS_H
-#define QXDDEFS_H
-
-#include <stdbool.h>
-#include <stddef.h>
-#include <stdint.h>
+#include "qxddefs.h"
 
 //.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
 //. OBSERVAÇÕES
 //.
 //. - Não altere este arquivo.
+//. - Nos arquivos de implementação você pode definir outras funções para que
+//.   sejam usadas como auxiliares das neste arquivo.
 //.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
 
-/**
-  Diz respeito a referências inválidas ou inexistentes. Pode ser usado para
-  representar erro ou falha quando esperamos uma referência.
-  */
-#define QX_LAMBDA_REF NULL
-/**
-  Diz respeito a um índice inválido ou inexistente. Pode ser usado para
-  representar erro ou falha quando esperamos um índice.
-  */
-#define QX_LAMBDA_INDEX SIZE_MAX
+struct __qxd_list;
 
-/**
- * @brief Usado sempre que o parâmetro ou retorno disser respeito a um índice
- *        de um vetor ou lista.
- */
-typedef size_t qxIndex;
+typedef struct __qxd_list * QxList;
 
-#endif // QXDDEFS_H
+
+QxList qx_list_new   ();
+void   qx_list_delete(QxList list);
+
+size_t qx_list_size    (QxList list);
+
+bool qx_list_empty(QxList list);
+
+bool    qx_list_contains (QxList list, int element);
+qxIndex qx_list_find     (QxList list, int element, qxIndex fromIndex);
+qxIndex qx_list_find_last(QxList list, int element, qxIndex upToIndex);
+
+int qx_list_at  (QxList list, qxIndex index);
+int qx_list_font(QxList list);
+int qx_list_back(QxList list);
+
+void qx_list_insert    (QxList list, int element, qxIndex index);
+void qx_list_push_back (QxList list, int element);
+void qx_list_push_front(QxList list, int element);
+
+void qx_list_remove_element(QxList list, int element);
+void qx_list_remove_at     (QxList list, qxIndex index);
+void qx_list_pop_back      (QxList list);
+void qx_list_pop_front     (QxList list);
+
+#endif //ED_QXALG_QXDLIST_H

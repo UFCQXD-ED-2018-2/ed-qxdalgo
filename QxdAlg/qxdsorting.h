@@ -8,7 +8,7 @@
  **
  **  @copyright
  **  This source code is part of an educational project, associated with
- **  a undergraduate course or extension project, that is hosted at
+ **  an undergraduate course or extension project, that is hosted at
  **  Universidade Federal do Ceará, Campus Quixadá.
  **  Copyright (C) 2018 UFC Quixadá, All Rights Reserved.
  **
