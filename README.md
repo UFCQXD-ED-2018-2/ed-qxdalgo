@@ -1,45 +1,29 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# QxdAlgoritmos
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+## Objetivo
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+Seu objetivo é implementar os algoritmos e estruturas de dados vistos na disciplina. Você irá construir uma espécie de biblioteca, seguindo a API definida pelos arquivos que já estão nesse repositório.
 
----
+## Instruções
 
-## Edit a file
+Os algoritmos e as estruturas estão organizadas nos arquivos de cabeçalho disponibilizados. Seu trabalho consiste em implementar *todas* as funções contidas nesses arquivos, juntamente com quaisquer outras que você necessitar.
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+Cada arquivo `.h`, à exceção do `qxddefs.h` deve ter um correspondente `.c` onde você implementará as funções correspondentes. Note que inclusive os tipos abstratos de dados precisam ser definidos (o que significa que é preciso incluir a descrição de seus campos). Isso também deverá ser feito nos arquivos `.c` pertinentes.
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+Os arquivos de cabeçalho **não devem** ser alterados! Quais quer funções auxiliares devem ser incluidas apenas nos arquivos de implementação.
 
----
+O arquivo `main.c` pode ser usado para você testar o funcionamento das suas implementações.
 
-## Create a file
+## Documentação
 
-Next, you’ll add a new file to this repository.
+Cada função definida nos cabeçalhos foi documentada com a descrição do que elas esperam como parâmetros e quais são seus comportamentos. Essa documentação está nos próprios arquivos, porém foi feita em um formato que permite a geração de documentação interativa. A versão em html dessas mesmas descrições está no arquivo `index.html` dentro da pasta `docs`.
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+## Informações
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+A cada novo assunto que virmos nas aulas, esse repositório será atualizado. Assim, verifique de vez em quando se algum arquivo foi adicionado.
 
----
+Note, também, que a nomenclatura de algoritmos e estruturas usadas nos arquivos deste repositório não necessariamente é a mesma que usamos na sala. Aqui tentamos usar nomes baseados nos já convencionados por várias linguagens. Por exemplo, usamos o nome `vector`para nos referirmos a uma *lista sequencial* e `list` para *lista (simplesmente) encadeada*.
 
-## Clone a repository
+## Entrega
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
-
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
-
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+A implementação desses códigos deve ser individual e a entrega consiste em subir suas implementações para este repositório usando a ferramenta `git` ou qualquer visualização gráfica deste. Sugerimos o programa [gitkraken](https://www.gitkraken.com/).
