@@ -24,6 +24,10 @@ A cada novo assunto que virmos nas aulas, esse repositório será atualizado. As
 
 Note, também, que a nomenclatura de algoritmos e estruturas usadas nos arquivos deste repositório não necessariamente é a mesma que usamos na sala. Aqui tentamos usar nomes baseados nos já convencionados por várias linguagens. Por exemplo, usamos o nome `vector`para nos referirmos a uma *lista sequencial* e `list` para *lista (simplesmente) encadeada*.
 
+## Compilação
+
+Para compilar este projeto, basta incluir todos os arquivos `.c`. Alternativamente, você pode importar a pasta que contém este arquivo `README` como um projeto no [*CLion*](https://www.jetbrains.com/clion).
+
 ## Entrega
 
 A implementação desses códigos deve ser individual e a entrega consiste em subir suas implementações para este repositório usando a ferramenta `git` ou qualquer visualização gráfica deste. Sugerimos o programa [gitkraken](https://www.gitkraken.com/).
