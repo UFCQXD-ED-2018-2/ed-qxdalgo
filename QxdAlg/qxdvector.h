@@ -1,42 +1,94 @@
-#ifndef QXDVECTOR_H
-#define QXDVECTOR_H
+/************************************************************************
+ **
+ **  @file   qxdvector.h
+ **  @date   2018-11-7
+ **  @author Arthur Rodrigues Araruna <ararunaufc(at)gmail.com>
+ **
+ **  @brief
+ **
+ **  @copyright
+ **  This source code is part of an educational project, associated with
+ **  an undergraduate course or extension project, that is hosted at
+ **  Universidade Federal do Ceará, Campus Quixadá.
+ **  Copyright (C) 2018 UFC Quixadá, All Rights Reserved.
+ **
+ **  This project is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  This project is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with the source code of this project. If not, see
+ **  <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
+
+#ifndef ED_QXALG_QXDVECTOR_H
+#define ED_QXALG_QXDVECTOR_H
 
 #include "qxddefs.h"
+#include <stdio.h>
 
-#include <stdbool.h>
+//.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+//. OBSERVAÇÕES
+//.
+//. - Não altere este arquivo.
+//. - Nos arquivos de implementação você pode definir outras funções para que
+//.   sejam usadas como auxiliares das neste arquivo.
+//.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
 
-typedef struct __qx_vector {
-    size_t size;
-    size_t capacity;
-    size_t elemSize;
-    qxGenericArray storage;
-} * qxVector;
+struct __qxd_vector;
 
-qxVector qx_vector_new(size_t capacity, size_t elemSize);
-void qx_vector_delete(qxVector vector);
-void qx_vector_delete_complex(qxVector vector, qxHandleElementFunc deleter, qxUserData data);
+typedef struct __qxd_vector *QxVector;
 
-void qx_vector_clear(qxVector vector);
 
-qxVector qx_vector_clone(qxVector vector);
-qxVector qx_vector_clone_subvector(qxVector vector, qxIndex begin, qxIndex end);
+QxVector qx_vector_new(size_t capacity);
 
-void qx_vector_copy(qxVector to, qxIndex to_begin, qxVector from, qxIndex from_begin, size_t num_elems);
+void qx_vector_delete(QxVector vector);
 
-bool qx_vector_reserve(qxVector vector, size_t capacity);
+size_t qx_vector_size(QxVector vector);
 
-bool qx_vector_is_empty(qxVector vector);
-size_t qx_vector_size(qxVector vector);
-qxGenericElement qx_vector_at(qxVector vector, qxIndex index);
-qxGenericElement qx_vector_first(qxVector vector);
-qxGenericElement qx_vector_last(qxVector vector);
+size_t qx_vector_capacity(QxVector vector);
 
-bool qx_vector_insert_at(qxVector vector, qxIndex index, qxGenericElement elem);
-bool qx_vector_push_front(qxVector vector, qxGenericElement elem);
-bool qx_vector_push_back(qxVector vector, qxGenericElement elem);
+bool qx_vector_empty(QxVector vector);
 
-bool qx_vector_remove_at(qxVector vector, qxIndex index);
-bool qx_vector_pop_front(qxVector vector);
-bool qx_vector_pop_back(qxVector vector);
+bool qx_vector_full(QxVector vector);
 
-#endif // QXDVECTOR_H
+bool qx_vector_contains(QxVector vector, int element);
+
+qxIndex qx_vector_find(QxVector vector, int element, qxIndex fromIndex);
+
+qxIndex qx_vector_find_last(QxVector vector, int element, qxIndex upToIndex);
+
+int qx_vector_at(QxVector vector, qxIndex index);
+
+int qx_vector_font(QxVector vector);
+
+int qx_vector_back(QxVector vector);
+
+bool qx_vector_insert_at(QxVector vector, int element, qxIndex index);
+
+void qx_vector_push_front(QxVector vector, int element);
+
+void qx_vector_push_back(QxVector vector, int element);
+
+qxIndex qx_vector_remove_element_first(QxVector vector, int element);
+
+qxIndex qx_vector_remove_element_last(QxVector vector, int element);
+
+unsigned int qx_vector_remove_element_all(QxVector vector, int element);
+
+bool qx_vector_remove_at(QxVector vector, qxIndex index);
+
+void qx_vector_pop_front(QxVector vector);
+
+void qx_vector_pop_back(QxVector vector);
+
+void qx_vector_print_to(QxVector vector, FILE *fp);
+
+#endif //ED_QXALG_QXDVECTOR_H
