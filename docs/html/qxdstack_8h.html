@@ -121,12 +121,13 @@ Funções</h2></td></tr>
 <tr class="memitem:af5410fc5b8ab95e2098f71a222b1a1e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qxdstack_8h.html#af5410fc5b8ab95e2098f71a222b1a1e6">qx_stack_full</a> (<a class="el" href="qxdstack_8h.html#a25db40b693fd1604e695fab3badcca57">QxStack</a> stack)</td></tr>
 <tr class="separator:af5410fc5b8ab95e2098f71a222b1a1e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Consulta de elementos</div></td></tr>
-<tr class="memitem:a063273477207b9511a825ae87aef22ca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qxdstack_8h.html#a063273477207b9511a825ae87aef22ca">qx_stack_peek</a> (<a class="el" href="qxdstack_8h.html#a25db40b693fd1604e695fab3badcca57">QxStack</a> stack)</td></tr>
-<tr class="separator:a063273477207b9511a825ae87aef22ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a3db19974a58acab8533b45a380621a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qxdstack_8h.html#a8a3db19974a58acab8533b45a380621a">qx_stack_top</a> (<a class="el" href="qxdstack_8h.html#a25db40b693fd1604e695fab3badcca57">QxStack</a> stack)</td></tr>
+<tr class="separator:a8a3db19974a58acab8533b45a380621a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f9ec886495619b8b05d8b127eab0253"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qxdstack_8h.html#a4f9ec886495619b8b05d8b127eab0253">qx_stack_contains</a> (<a class="el" href="qxdstack_8h.html#a25db40b693fd1604e695fab3badcca57">QxStack</a> stack, int element)</td></tr>
 <tr class="separator:a4f9ec886495619b8b05d8b127eab0253"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb8e54cb6b7b17e97fcaaef219f30712"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qxdstack_8h.html#afb8e54cb6b7b17e97fcaaef219f30712">qx_stack_find</a> (<a class="el" href="qxdstack_8h.html#a25db40b693fd1604e695fab3badcca57">QxStack</a> stack, int element)</td></tr>
 <tr class="separator:afb8e54cb6b7b17e97fcaaef219f30712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Modificação</div></td></tr>
 <tr class="memitem:a6c743e0d08458700b98dc580dff04c7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qxdstack_8h.html#a6c743e0d08458700b98dc580dff04c7d">qx_stack_push</a> (<a class="el" href="qxdstack_8h.html#a25db40b693fd1604e695fab3badcca57">QxStack</a> stack, int elem)</td></tr>
 <tr class="separator:a6c743e0d08458700b98dc580dff04c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4fda68e3bcce5064cec4965ceba1afb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qxdstack_8h.html#ad4fda68e3bcce5064cec4965ceba1afb">qx_stack_pop</a> (<a class="el" href="qxdstack_8h.html#a25db40b693fd1604e695fab3badcca57">QxStack</a> stack)</td></tr>
@@ -383,34 +384,8 @@ Funções</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section remark"><dt>Anotações</dt><dd><code>initCapacity</code> não deve ser 0 para implementações sequenciais. </dd></dl>
 <dl class="section return"><dt>Retorna</dt><dd>Nova pilha. </dd></dl>
-
-</div>
-</div>
-<a id="a063273477207b9511a825ae87aef22ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a063273477207b9511a825ae87aef22ca">&#9670;&nbsp;</a></span>qx_stack_peek()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int qx_stack_peek </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="qxdstack_8h.html#a25db40b693fd1604e695fab3badcca57">QxStack</a>&#160;</td>
-          <td class="paramname"><em>stack</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Determina o elemento atualmente no topo da pilha informada.</p>
-<p>Ou seja, o elemento que seria removido por uma chamada a <a class="el" href="qxdstack_8h.html#ad4fda68e3bcce5064cec4965ceba1afb">qx_stack_pop</a>.</p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">stack</td><td>Pilha a consultar. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Retorna</dt><dd>valor de elemento; ou <a class="el" href="qxddefs_8h.html#aa01a677aa82288578ebe9cfc6dd758d2">QX_LAMBDA_ELEMENT</a> caso <code>stack</code> esteja vazia. </dd></dl>
 
 </div>
 </div>
@@ -432,7 +407,7 @@ Funções</h2></td></tr>
 <p>Desempilha o elemento no topo da pilha informada. Caso a pilha esteja vazia, não faz nada.</p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">stack</td><td>Pilha a consultar. </td></tr>
+    <tr><td class="paramname">stack</td><td>Pilha a modificar. </td></tr>
   </table>
   </dd>
 </dl>
@@ -472,7 +447,7 @@ Funções</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>Veja também</dt><dd><a href="https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm" target="_blank" rel="noreferrer">fprintf</a> </dd></dl>
+<dl class="section see"><dt>Veja também</dt><dd><a href="https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm" target="_blank" rel="noreferrer noopener">fprintf</a> </dd></dl>
 
 </div>
 </div>
@@ -535,6 +510,33 @@ Funções</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Retorna</dt><dd>Número de elementos na pilha. </dd></dl>
+
+</div>
+</div>
+<a id="a8a3db19974a58acab8533b45a380621a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a3db19974a58acab8533b45a380621a">&#9670;&nbsp;</a></span>qx_stack_top()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int qx_stack_top </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="qxdstack_8h.html#a25db40b693fd1604e695fab3badcca57">QxStack</a>&#160;</td>
+          <td class="paramname"><em>stack</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Determina o elemento atualmente no topo da pilha informada.</p>
+<p>Ou seja, o elemento que seria removido por uma chamada a <a class="el" href="qxdstack_8h.html#ad4fda68e3bcce5064cec4965ceba1afb">qx_stack_pop</a>.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stack</td><td>Pilha a consultar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>valor de elemento; ou <a class="el" href="qxddefs_8h.html#aa01a677aa82288578ebe9cfc6dd758d2">QX_LAMBDA_ELEMENT</a> caso <code>stack</code> esteja vazia. </dd></dl>
 
 </div>
 </div>

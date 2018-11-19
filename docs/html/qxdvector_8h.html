@@ -144,8 +144,8 @@ Funções</h2></td></tr>
 <tr class="separator:a24e31bb24b72e2fef19169f58b021ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7f6583ea8d16dc096f29ff4349d763e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="qxddefs_8h.html#a62a7d33207eb2c250a8f728dbefa37c7">qxIndex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qxdvector_8h.html#ab7f6583ea8d16dc096f29ff4349d763e">qx_vector_remove_element_last</a> (<a class="el" href="qxdvector_8h.html#a0e711c1a0c0966edae211bfd1b10170d">QxVector</a> vector, int element)</td></tr>
 <tr class="separator:ab7f6583ea8d16dc096f29ff4349d763e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec157afb2c394ae2e327d3a0fd4bd41b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qxdvector_8h.html#aec157afb2c394ae2e327d3a0fd4bd41b">qx_vector_remove_element_all</a> (<a class="el" href="qxdvector_8h.html#a0e711c1a0c0966edae211bfd1b10170d">QxVector</a> vector, int element)</td></tr>
-<tr class="separator:aec157afb2c394ae2e327d3a0fd4bd41b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48c4f26fff0d8805299dc2480feb5429"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qxdvector_8h.html#a48c4f26fff0d8805299dc2480feb5429">qx_vector_remove_element_all</a> (<a class="el" href="qxdvector_8h.html#a0e711c1a0c0966edae211bfd1b10170d">QxVector</a> vector, int element)</td></tr>
+<tr class="separator:a48c4f26fff0d8805299dc2480feb5429"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4bc889c6e78bf45d75e3d8dbb06bd5f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qxdvector_8h.html#ae4bc889c6e78bf45d75e3d8dbb06bd5f">qx_vector_remove_at</a> (<a class="el" href="qxdvector_8h.html#a0e711c1a0c0966edae211bfd1b10170d">QxVector</a> vector, <a class="el" href="qxddefs_8h.html#a62a7d33207eb2c250a8f728dbefa37c7">qxIndex</a> index)</td></tr>
 <tr class="separator:ae4bc889c6e78bf45d75e3d8dbb06bd5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae51bb90e77b34d45868a8b59754d53aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qxdvector_8h.html#ae51bb90e77b34d45868a8b59754d53aa">qx_vector_pop_front</a> (<a class="el" href="qxdvector_8h.html#a0e711c1a0c0966edae211bfd1b10170d">QxVector</a> vector)</td></tr>
@@ -280,7 +280,7 @@ Funções</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Remove <em>todos</em> os elementos de um vetor, tornando-a vazia.</p>
+<p>Remove <em>todos</em> os elementos de um vetor, tornando-o vazio.</p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">vector</td><td>Vetor a modificar. </td></tr>
@@ -367,7 +367,7 @@ Funções</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Determina se um vetor está ou não vazia.</p>
+<p>Determina se um vetor está ou não vazio.</p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">vector</td><td>Vetor a consultar. </td></tr>
@@ -515,7 +515,7 @@ Funções</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Retorna</dt><dd><code>true</code> caso <code>vector</code> informado não possui espaço livre; <code>false</code> caso contrário. </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>true</code> caso <code>vector</code> informado não possua espaço livre; <code>false</code> caso contrário. </dd></dl>
 
 </div>
 </div>
@@ -585,6 +585,7 @@ Funções</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section pre"><dt>Pré-Condição</dt><dd><code>initCapacity</code> &gt; 0 </dd></dl>
 <dl class="section return"><dt>Retorna</dt><dd>Novo vetor. </dd></dl>
 
 </div>
@@ -672,7 +673,7 @@ Funções</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>Veja também</dt><dd><a href="https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm" target="_blank" rel="noreferrer">fprintf</a> </dd></dl>
+<dl class="section see"><dt>Veja também</dt><dd><a href="https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm" target="_blank" rel="noreferrer noopener">fprintf</a> </dd></dl>
 
 </div>
 </div>
@@ -785,14 +786,14 @@ Funções</h2></td></tr>
 
 </div>
 </div>
-<a id="aec157afb2c394ae2e327d3a0fd4bd41b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec157afb2c394ae2e327d3a0fd4bd41b">&#9670;&nbsp;</a></span>qx_vector_remove_element_all()</h2>
+<a id="a48c4f26fff0d8805299dc2480feb5429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48c4f26fff0d8805299dc2480feb5429">&#9670;&nbsp;</a></span>qx_vector_remove_element_all()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int qx_vector_remove_element_all </td>
+          <td class="memname">size_t qx_vector_remove_element_all </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="qxdvector_8h.html#a0e711c1a0c0966edae211bfd1b10170d">QxVector</a>&#160;</td>
           <td class="paramname"><em>vector</em>, </td>

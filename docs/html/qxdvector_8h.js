@@ -20,7 +20,7 @@ var qxdvector_8h =
     [ "qx_vector_push_back", "qxdvector_8h.html#a16dd9fedf3bfd0448e6553826e58e493", null ],
     [ "qx_vector_push_front", "qxdvector_8h.html#ad318d13a1c9fb5af39a8f65ade920c99", null ],
     [ "qx_vector_remove_at", "qxdvector_8h.html#ae4bc889c6e78bf45d75e3d8dbb06bd5f", null ],
-    [ "qx_vector_remove_element_all", "qxdvector_8h.html#aec157afb2c394ae2e327d3a0fd4bd41b", null ],
+    [ "qx_vector_remove_element_all", "qxdvector_8h.html#a48c4f26fff0d8805299dc2480feb5429", null ],
     [ "qx_vector_remove_element_first", "qxdvector_8h.html#a24e31bb24b72e2fef19169f58b021ebc", null ],
     [ "qx_vector_remove_element_last", "qxdvector_8h.html#ab7f6583ea8d16dc096f29ff4349d763e", null ],
     [ "qx_vector_size", "qxdvector_8h.html#a3c3ad5662259142112bdf5255cb22cc8", null ]

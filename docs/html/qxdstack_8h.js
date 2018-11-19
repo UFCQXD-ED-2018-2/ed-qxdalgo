@@ -9,9 +9,9 @@ var qxdstack_8h =
     [ "qx_stack_find", "qxdstack_8h.html#afb8e54cb6b7b17e97fcaaef219f30712", null ],
     [ "qx_stack_full", "qxdstack_8h.html#af5410fc5b8ab95e2098f71a222b1a1e6", null ],
     [ "qx_stack_new", "qxdstack_8h.html#a621b401bfdecd9d83bf3eaa1c54ecb02", null ],
-    [ "qx_stack_peek", "qxdstack_8h.html#a063273477207b9511a825ae87aef22ca", null ],
     [ "qx_stack_pop", "qxdstack_8h.html#ad4fda68e3bcce5064cec4965ceba1afb", null ],
     [ "qx_stack_print_to", "qxdstack_8h.html#a0cbde78e028a2e3c9a5a23f810b15af3", null ],
     [ "qx_stack_push", "qxdstack_8h.html#a6c743e0d08458700b98dc580dff04c7d", null ],
-    [ "qx_stack_size", "qxdstack_8h.html#a1b5ab204e6bfb1516a312ed35a5b582a", null ]
+    [ "qx_stack_size", "qxdstack_8h.html#a1b5ab204e6bfb1516a312ed35a5b582a", null ],
+    [ "qx_stack_top", "qxdstack_8h.html#a8a3db19974a58acab8533b45a380621a", null ]
 ];

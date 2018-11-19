@@ -57,7 +57,8 @@ typedef struct __qxd_vector *QxVector;
 /**
  * Cria um novo vetor.
  *
- * @param initCapacity Capacidade inicial do vetor.
+ * @param  initCapacity Capacidade inicial do vetor.
+ * @pre    \p initCapacity > 0
  * @return Novo vetor.
  */
 QxVector qx_vector_new(size_t initCapacity);
@@ -94,7 +95,7 @@ size_t qx_vector_size(QxVector vector);
 size_t qx_vector_capacity(QxVector vector);
 
 /**
- * Determina se um vetor está ou não vazia.
+ * Determina se um vetor está ou não vazio.
  *
  * @param vector Vetor a consultar.
  * @return \c true se \p vector informado não possui elementos; \c false
@@ -111,7 +112,7 @@ bool qx_vector_empty(QxVector vector);
  * memória no vetor.
  *
  * @param vector Vetor a consultar.
- * @return \c true caso \p vector informado não possui espaço livre; \c false
+ * @return \c true caso \p vector informado não possua espaço livre; \c false
  *         caso contrário.
  */
 bool qx_vector_full(QxVector vector);
@@ -249,7 +250,7 @@ qxIndex qx_vector_remove_element_last(QxVector vector, int element);
  * @param element Valor a procurar.
  * @return Quantidade de elementos removidos
  */
-unsigned int qx_vector_remove_element_all(QxVector vector, int element);
+size_t qx_vector_remove_element_all(QxVector vector, int element);
 
 /**
  * Remove um elemento de um vetor num índice dado.
@@ -276,7 +277,7 @@ void qx_vector_pop_front(QxVector vector);
 void qx_vector_pop_back(QxVector vector);
 
 /**
- * Remove \em todos os elementos de um vetor, tornando-a vazia.
+ * Remove \em todos os elementos de um vetor, tornando-o vazio.
  *
  * @param vector Vetor a modificar.
  */

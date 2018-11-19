@@ -1,6 +1,33 @@
-//
-// Created by araruna on 19/11/18.
-//
+/************************************************************************
+ **
+ **  @file   qxdstack.h
+ **  @date   2018-11-19
+ **  @author Arthur Rodrigues Araruna <ararunaufc(at)gmail.com>
+ **
+ **  @brief
+ **
+ **  @copyright
+ **  This source code is part of an educational project, associated with
+ **  an undergraduate course or extension project, that is hosted at
+ **  Universidade Federal do Ceará, Campus Quixadá.
+ **  Copyright (C) 2018 UFC Quixadá, All Rights Reserved.
+ **
+ **  This project is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  This project is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with the source code of this project. If not, see
+ **  <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
+
 
 #ifndef ED_QXALG_QXDSTACK_H
 #define ED_QXALG_QXDSTACK_H
@@ -32,8 +59,9 @@ typedef struct __qxd_stack *QxStack;
 /**
  * Cria uma nova pilha.
  *
- * @param initCapacity Capacidade inicial da pilha. Pode ser ignorado pela
+ * @param  initCapacity Capacidade inicial da pilha. Pode ser ignorado pela
  *                     implementação caso não seja necessário.
+ * @remark \p initCapacity não deve ser 0 para implementações sequenciais.
  * @return Nova pilha.
  */
 QxStack qx_stack_new(size_t initCapacity);
@@ -111,7 +139,7 @@ bool qx_stack_full(QxStack stack);
  * @param stack Pilha a consultar.
  * @return valor de elemento; ou #QX_LAMBDA_ELEMENT caso \c stack esteja vazia.
  */
-int qx_stack_peek(QxStack stack);
+int qx_stack_top(QxStack stack);
 
 /**
  * Determina se uma pilha possui um elemento com valor igual a um valor informado.
@@ -135,7 +163,12 @@ bool qx_stack_contains(QxStack stack, int element);
  *         caso \p valor não exista em \p stack.
  */
 size_t qx_stack_find(QxStack stack, int element);
+///@}
 
+/**
+ * @name Modificação
+ */
+///@{
 /**
  * Empilha um elemento informado na pilha informada.
  *
@@ -148,7 +181,7 @@ void qx_stack_push(QxStack stack, int elem);
  * Desempilha o elemento no topo da pilha informada. Caso a pilha esteja vazia,
  * não faz nada.
  *
- * @param stack Pilha a consultar.
+ * @param stack Pilha a modificar.
  */
 void qx_stack_pop(QxStack stack);
 

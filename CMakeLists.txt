@@ -9,4 +9,4 @@ add_executable(ed_qxalg
         QxdAlg/main.c
         QxdAlg/qxddefs.h
         QxdAlg/qxdsearching.h
-        QxdAlg/qxdsorting.h QxdAlg/qxdvector.h QxdAlg/qxdlist.h QxdAlg/qxdstack.h)
+        QxdAlg/qxdsorting.h QxdAlg/qxdvector.h QxdAlg/qxdlist.h QxdAlg/qxdstack.h QxdAlg/qxqueue.h QxdAlg/qxbuffer.h)
