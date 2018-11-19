@@ -36,8 +36,8 @@ Para obter as atualizações feitas nos arquivos deste projeto e importá-las pa
 acessar a página onde você importará as mudanças.
 0. Abaixo do título da página ("_Comparing changes_"), você deve encontrar um link rotulado como "_compare across 
 forks_". Clique nesse link.
-0. Observe que a barra logo abaixo desse link mudou. Procure a caixa que contém a sentença "_head fork_", e nela 
-selecione o seu projeto.
+0. Observe que a barra logo abaixo desse link mudou. Procure a caixa que contém a sentença "_base fork_" (deve ser a 
+primeira caixa à esquerda), e nela selecione o seu projeto.
 0. Aguarde um pouco até que apareça logo abaixo dessas caixas a mensagem "_Able to merge_". Então, clique no botão 
 "_Create pull request_".
 0. Nos campos "_Title_" e "_Leave a comment_" que aparecerem, preencha com "Atualização do projeto".
