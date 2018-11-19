@@ -295,7 +295,7 @@ void qx_vector_clear(QxVector vector);
  * @param vector Vetor a consultar.
  * @param fp Arquivo onde imprimir.
  * @see <a href="https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm" target="_blank"
- * rel="noreferrer">fprintf</a>
+ * rel="noreferrer noopener">fprintf</a>
  */
 void qx_vector_print_to(QxVector vector, FILE *fp);
 ///@}

@@ -172,7 +172,7 @@ void qx_stack_clear(QxStack stack);
  * @param stack Pilha a consultar.
  * @param fp Arquivo onde imprimir.
  * @see <a href="https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm" target="_blank"
- * rel="noreferrer">fprintf</a>
+ * rel="noreferrer noopener">fprintf</a>
  */
 void qx_stack_print_to(QxStack stack, FILE *fp);
 ///@}
