@@ -57,6 +57,11 @@
  * representar erro ou falha quando esperamos um elemento.
  */
 #define QX_LAMBDA_ELEMENT INT_MIN
+/**
+ * Diz respeito a tamanhos ilimitados. Pode ser usado para representar
+ * capacidade ilimitada em estruturas baseadas em nós, por exemplo.
+ */
+#define QX_INFINITY_SIZE INT_MAX
 
 /**
  * @brief Usado sempre que o parâmetro ou retorno disser respeito a um índice
