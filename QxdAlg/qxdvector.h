@@ -111,7 +111,7 @@ bool qx_vector_empty(QxVector vector);
  * memória no vetor.
  *
  * @param vector Vetor a consultar.
- * @return \true caso \p vector informado não possui espaço livre; \c false
+ * @return \c true caso \p vector informado não possui espaço livre; \c false
  *         caso contrário.
  */
 bool qx_vector_full(QxVector vector);
@@ -294,6 +294,8 @@ void qx_vector_clear(QxVector vector);
  *
  * @param vector Vetor a consultar.
  * @param fp Arquivo onde imprimir.
+ * @see <a href="https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm" target="_blank"
+ * rel="noreferrer">fprintf</a>
  */
 void qx_vector_print_to(QxVector vector, FILE *fp);
 ///@}

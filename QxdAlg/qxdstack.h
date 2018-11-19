@@ -93,7 +93,7 @@ bool qx_stack_empty(QxStack stack);
  * deve sempre retornar \c false.
  *
  * @param stack Pilha a consultar.
- * @return \true caso \p stack informada não possui espaço livre; \c false
+ * @return \c true caso \p stack informada não possui espaço livre; \c false
  *         caso contrário.
  */
 bool qx_stack_full(QxStack stack);
@@ -151,5 +151,30 @@ void qx_stack_push(QxStack stack, int elem);
  * @param stack Pilha a consultar.
  */
 void qx_stack_pop(QxStack stack);
+
+/**
+ * Remove \em todos os elementos de uma pilha, tornando-a vazia.
+ *
+ * @param stack Pilha a modificar.
+ */
+void qx_stack_clear(QxStack stack);
+///@}
+
+/**
+ * @name Extras
+ */
+///@{
+/**
+ * Gera a impressão de todos os elementos de uma pilha no arquivo indicado.
+ * O arquivo informado pode inclusive ser uma das saídas padrão
+ * (\c stdout ou \c stderr).
+ *
+ * @param stack Pilha a consultar.
+ * @param fp Arquivo onde imprimir.
+ * @see <a href="https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm" target="_blank"
+ * rel="noreferrer">fprintf</a>
+ */
+void qx_stack_print_to(QxStack stack, FILE *fp);
+///@}
 
 #endif //ED_QXALG_QXDSTACK_H

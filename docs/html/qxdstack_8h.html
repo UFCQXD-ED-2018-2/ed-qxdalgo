@@ -131,6 +131,11 @@ Funções</h2></td></tr>
 <tr class="separator:a6c743e0d08458700b98dc580dff04c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4fda68e3bcce5064cec4965ceba1afb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qxdstack_8h.html#ad4fda68e3bcce5064cec4965ceba1afb">qx_stack_pop</a> (<a class="el" href="qxdstack_8h.html#a25db40b693fd1604e695fab3badcca57">QxStack</a> stack)</td></tr>
 <tr class="separator:ad4fda68e3bcce5064cec4965ceba1afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add492330313f747d2cc3598caada93db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qxdstack_8h.html#add492330313f747d2cc3598caada93db">qx_stack_clear</a> (<a class="el" href="qxdstack_8h.html#a25db40b693fd1604e695fab3badcca57">QxStack</a> stack)</td></tr>
+<tr class="separator:add492330313f747d2cc3598caada93db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Extras</div></td></tr>
+<tr class="memitem:a0cbde78e028a2e3c9a5a23f810b15af3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qxdstack_8h.html#a0cbde78e028a2e3c9a5a23f810b15af3">qx_stack_print_to</a> (<a class="el" href="qxdstack_8h.html#a25db40b693fd1604e695fab3badcca57">QxStack</a> stack, FILE *fp)</td></tr>
+<tr class="separator:a0cbde78e028a2e3c9a5a23f810b15af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Definições dos tipos</h2>
 <a id="a25db40b693fd1604e695fab3badcca57"></a>
@@ -174,6 +179,31 @@ Funções</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Retorna</dt><dd>Número de espaços existentes para elementos na pilha; ou <a class="el" href="qxddefs_8h.html#a110e8165c27aefca8a7cd2483299d201">QX_INFINITY_SIZE</a>. </dd></dl>
+
+</div>
+</div>
+<a id="add492330313f747d2cc3598caada93db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add492330313f747d2cc3598caada93db">&#9670;&nbsp;</a></span>qx_stack_clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void qx_stack_clear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="qxdstack_8h.html#a25db40b693fd1604e695fab3badcca57">QxStack</a>&#160;</td>
+          <td class="paramname"><em>stack</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Remove <em>todos</em> os elementos de uma pilha, tornando-a vazia.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stack</td><td>Pilha a modificar. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -327,7 +357,7 @@ Funções</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Retorna</dt><dd>caso <code>stack</code> informada não possui espaço livre; <code>false</code> caso contrário. </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>true</code> caso <code>stack</code> informada não possui espaço livre; <code>false</code> caso contrário. </dd></dl>
 
 </div>
 </div>
@@ -406,6 +436,43 @@ Funções</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a0cbde78e028a2e3c9a5a23f810b15af3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cbde78e028a2e3c9a5a23f810b15af3">&#9670;&nbsp;</a></span>qx_stack_print_to()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void qx_stack_print_to </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="qxdstack_8h.html#a25db40b693fd1604e695fab3badcca57">QxStack</a>&#160;</td>
+          <td class="paramname"><em>stack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gera a impressão de todos os elementos de uma pilha no arquivo indicado. O arquivo informado pode inclusive ser uma das saídas padrão (<code>stdout</code> ou <code>stderr</code>).</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stack</td><td>Pilha a consultar. </td></tr>
+    <tr><td class="paramname">fp</td><td>Arquivo onde imprimir. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>Veja também</dt><dd><a href="https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm" target="_blank" rel="noreferrer">fprintf</a> </dd></dl>
 
 </div>
 </div>

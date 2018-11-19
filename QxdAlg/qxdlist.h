@@ -268,6 +268,8 @@ void qx_list_clear(QxList list);
  *
  * @param list Lista a consultar.
  * @param fp Arquivo onde imprimir.
+ * @see <a href="https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm" target="_blank"
+ * rel="noreferrer">fprintf</a>
  */
 void qx_list_print_to(QxList list, FILE *fp);
 ///@}
