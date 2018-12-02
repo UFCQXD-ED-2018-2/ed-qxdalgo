@@ -1,140 +1,198 @@
 #include "qxdlist.h"
 #include <stdlib.h>
 
-struct __qxd_list
+struct node
 {
   int n ;
-  QxList next ;
+  struct node * next ;
 } ;
 
-void delete (QxList list)
+typedef struct node node ;
+
+struct __qxd_list
 {
-  if(list -> next != NULL)
+  node * head ;
+} ;
+
+void delete(node *l)
+{
+  if(l != NULL)
   {
-    delete(list -> next) ;
+    delete(l -> next) ;
   }
+
   else
-  {
-    free(list) ;
-    list -> next = NULL ;
-  }
+    free(l) ;
 
   return ;
 }
 
-size_t count_size(QxList list)
+qxIndex find_last(QxList list, int element, qxIndex upToIndex)
 {
-  static int n = 0 ;
-  if(list -> next != NULL)
+  int aux = 0 ;
+  qxIndex i = 0, a = 0 ;
+  node *l = (node*) malloc(sizeof(node *)) ;
+  l = list -> head ;
+
+  while (i != upToIndex)
   {
-    ++n ;
-    count_size(list -> next) ;
+    l = l -> next ;
+    ++i ;
   }
 
-  return n ;
+  if(l -> n == element)
+    aux = 1 ;
+
+  while (l != NULL)
+  {
+    if (l -> n == element)
+      i = a ;
+    l = l -> next ;
+    ++a ;
+  }
+
+  if((qxIndex)i != upToIndex)
+    return i ;
+
+  else if((qxIndex)i == upToIndex && aux == 1)
+    return i ;
+
+  else
+    return QX_LAMBDA_INDEX ;
 }
 
 QxList qx_list_new()
 {
-  QxList new = (QxList) malloc (sizeof(QxList)) ;
-  new -> next = NULL ;
+  QxList new = (QxList) malloc(sizeof(QxList)) ;
+  new -> head = NULL ;
   return new ;
 }
 
 void qx_list_delete(QxList list)
 {
-  if(!qx_list_empty(list))
+  if(qx_list_empty(list))
   {
-    delete(list) ;
-  }
-  else
     free(list) ;
+    return ;
+  }
 
+  delete(list -> head) ;
+  free(list) ;
   return ;
 }
 
 size_t qx_list_size(QxList list)
 {
-  if(!qx_list_empty(list))
-  {
-    return count_size(list) ;
-  }
-  else
-    return 0 ;
-}
+  size_t count = 1 ;
+  node * l = (node *) malloc(sizeof(node *)) ;
 
+  if(qx_list_empty(list))
+  {
+    count = 0 ;
+    return count ;
+  }
+
+  else
+  {
+    l = list -> head ;
+
+    while(l -> next != NULL)
+    {
+      count ++ ;
+      l = l -> next ;
+    }
+
+    return count ;
+  }
+}
 
 bool qx_list_empty(QxList list)
 {
-  if (list -> next == NULL)
+  if(list -> head == NULL)
     return true ;
 
-  return false ;
+  else
+    return false ;
 }
 
 bool qx_list_contains(QxList list, int element)
 {
-  QxList l = list -> next ;
-  while(l != NULL)
+  node *l = (node *) malloc(sizeof(node *)) ;
+  l = list -> head ;
+  if(qx_list_empty(list))
   {
-    if(l -> n == element)
-    {
-      return true ;
-    }
-    l = l -> next ;
+    return false ;
   }
 
-  return false ;
+  else
+  {
+    while(l != NULL)
+    {
+      if(l -> n == element)
+      {
+        return true ;
+      }
+      l = l -> next ;
+    }
+
+    return false ;
+  }
 
 }
 
 qxIndex qx_list_find(QxList list, int element, qxIndex fromIndex)
 {
-  qxIndex count = 0 ;
-  QxList l = list -> next ;
-  if(qx_list_empty(list))
+  node *l = (node*) malloc(sizeof(node*)) ;
+  qxIndex i = 0 ;
+  l = list -> head ;
+  if((qxIndex)qx_list_size(list)-1 < fromIndex)
     return QX_LAMBDA_INDEX ;
 
-  while((count != fromIndex) && (l -> next != NULL))
+  else
   {
-    l = l -> next ;
-    count++ ;
-  }
+    while(i != fromIndex)
+    {
+      l = l -> next ;
+      ++i ;
+    }
 
-  while((l -> n != element) && l != NULL)
-  {
-    l = l -> next ;
-    count++ ;
-  }
-  if(l -> n == element)
-    return count ;
+    do {
+      if (l -> n == element)
+        return i ;
 
-  return QX_LAMBDA_INDEX ;
+      ++ i ;
+      l = l -> next ;
+    } while(l != NULL) ;
+    return QX_LAMBDA_INDEX ;
+  }
 }
 
-// qxIndex qx_list_find_last(QxList list, int element, qxIndex upToIndex)
-// {
-//   if(list -> next != NULL)
-//   {
-//     qxIndex(list -> next, element, upToIndex) ;
-//   }
-//   if(list.element == element)
-//     return
-//}
+qxIndex qx_list_find_last(QxList list, int element, qxIndex upToIndex)
+{
+  if((qxIndex)qx_list_size(list)-1 < upToIndex)
+    return QX_LAMBDA_INDEX ;
+
+  return find_last(list) ;
+}
 
 int qx_list_at(QxList list, qxIndex index)
 {
-  qxIndex aux = 0 ;
-  QxList lista = list -> next ;
-  if((qxIndex)(qx_list_size(list)) < index)
+  node * l = (node*) malloc(sizeof(node *)) ;
+  qxIndex i = 0 ;
+  l = list -> head ;
+
+  if((qxIndex)qx_list_size(list)-1 < index)
     return QX_LAMBDA_ELEMENT ;
 
-  while(aux < index)
+  else
   {
-    ++ aux ;
-    lista = lista -> next ;
+    while (i != index)
+    {
+      l = l -> next ;
+      ++i ;
+    }
+    return l -> n ;
   }
-  return lista -> n ;
 }
 
 int qx_list_font(QxList list)
@@ -142,58 +200,176 @@ int qx_list_font(QxList list)
   if(qx_list_empty(list))
     return QX_LAMBDA_ELEMENT ;
 
-  return list -> next -> n ;
+  else
+    return list -> head -> n ;
 }
 
 int qx_list_back(QxList list)
 {
-  if(!qx_list_empty(list))
-  {
-    if(list -> next != NULL)
-    {
-      qx_list_back(list -> next) ;
-    }
-    return list -> n ;
-  }
-  else
+  node * l = (node *) malloc(sizeof(node *)) ;
+  l = list -> head ;
+  if(qx_list_empty(list))
     return QX_LAMBDA_ELEMENT ;
+
+  else
+  {
+    while (l -> next != NULL)
+    {
+      l = l -> next ;
+    }
+    return l -> n ;
+  }
 }
 
-// bool qx_list_insert_at(QxList list, int element, qxIndex index)
-// {
-//   if(qxIndex (qx_list_size(list)) >= index)
-//   {
-//
-//   }
-// }
+bool qx_list_insert_at(QxList list, int element, qxIndex index)
+{
+  node *l = (node *) malloc(sizeof(node *)), *new = (node *) malloc(sizeof(node *)) ;
+  qxIndex i = 0 ;
+  l = list -> head ;
+  new -> n = element ;
+  if((qxIndex)qx_list_size(list) < index || new == NULL)
+    return false ;
+
+  else if(index == 0)
+  {
+    qx_list_push_front(list, element) ;
+  }
+
+  else
+  {
+    while (i != index-1)
+    {
+      l = l -> next ;
+      ++i ;
+    }
+    new -> next = l -> next ;
+    l -> next = new ;
+    return true ;
+  }
+}
 
 void qx_list_push_front(QxList list, int element)
 {
-  QxList new ;
-  new -> next = list -> next ;
-  list -> next = new ;
+  node *new = (node*) malloc(sizeof(node*)) ;
+  new -> n = element ;
+  new -> next = list -> head ;
+  list -> head = new ;
+
+  return;
 }
 
 void qx_list_push_back(QxList list, int element)
 {
-  QxList l, lis ;
-  l -> n = element, l -> next = NULL ;
+  node *l = (node *) malloc(sizeof(node *)), *new = (node *) malloc(sizeof(node *)) ;
+  l = list -> head, new -> n = element ;
 
-   if(qx_list_empty(list))
-   {
-     list -> next = l ;
-   }
-   else
-   {
-     while(list -> next != NULL)
-     {
-       lis -> next = list -> next ;
-     }
-     lis -> next = l ;
-   }
+  while (l -> next != NULL)
+  {
+    l = l -> next ;
+  }
+  l -> next = new ;
+  new -> next = NULL ;
+  return ;
 }
 
-// qxIndex qx_list_remove_element_first(QxList list, int element)
-// {
-//
-// }
+qxIndex qx_list_remove_element_first(QxList list, int element)
+{
+  qxIndex i = 0 ;
+  node * l = (node*) malloc(sizeof(node *), *n = (node*) malloc(sizeof(node *)) ;
+  l = list -> head ;
+  if(qx_list_empty(list))
+    return QX_LAMBDA_INDEX ;
+
+  else
+  {
+    if(l -> n == element)
+    {
+      qx_list_pop_front(list) ;
+      return i ;
+    }
+
+    else
+    {
+      while (l -> next -> next -> n != element)
+      {
+        l = l -> next ;
+        ++i ;
+      }
+      n -> next = l -> next -> next -> next ;
+      free(l -> next -> next) ;
+      l -> next = n -> next ;
+      return i+2 ;
+    }
+  }
+}
+
+qxIndex qx_list_remove_element_last(QxList list, int element)
+{
+  int aux = 0 ;
+  qxIndex i = 0, a = 0 ;
+  node *l = (node *) malloc(sizeof(node *)) ;
+  l = list -> head ;
+
+  if(qx_list_empty(list))
+    return QX_LAMBDA_INDEX ;
+
+  else if(l -> n == element)
+    aux = 1 ;
+
+  else
+  {
+    while (l != NULL)
+    {
+      if(l -> n == element)
+        i = a ;
+      l = l -> next ;
+      ++a ;
+    }
+    if(i != 0)
+      return i ;
+    else if (aux == 1 && i == 0)
+      return i ;
+    else
+      return QX_LAMBDA_INDEX ;
+  }
+}
+
+// unsigned int qx_list_remove_element_all(QxList list, int element)
+
+// bool qx_list_remove_at(QxList list, qxIndex index)
+
+void qx_list_pop_front(QxList list)
+{
+  if(qx_list_empty(list))
+    return ;
+
+  else
+  {
+    if (list -> head -> next == NULL)
+    {
+      free(list -> head) ;
+      list -> head = NULL ;
+      return ;
+    }
+    else
+    {
+      node *l = (node *) malloc(sizeof(node *)) ;
+      l = list -> head -> next ;
+      free (list -> head) ;
+      list -> head =  l ;
+      return
+    }
+  }
+}
+
+void qx_list_print_to(QxList list, FILE *fp)
+{
+  node *l = (node*) malloc(sizeof(node*)) ;
+  l = list -> head ;
+
+  while(l != NULL)
+  {
+    printf("%d\n", l -> n) ;
+    l = l -> next ;
+  }
+}
